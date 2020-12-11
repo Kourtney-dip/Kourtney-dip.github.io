@@ -29,6 +29,7 @@
         color: white;
         flex: 1;
         margin: 0;
+        font-style: oblique;
     }
     #nav-ul {
         list-style-image: none;
@@ -61,7 +62,9 @@
         font-family: Courier New;
     }
     #interests {
-        border: 4px silver ridge;
+        border: 2px solid;
+        border-color: rgb(210, 252, 221);
+        border-radius: 20px;
         padding: 8px;
     }
     h2, h3 {
@@ -76,7 +79,7 @@
         <div id= "all contents">
                           
             <nav>
-                <h1>youtube.com/watch?v=dQw4w9WgXcQ  Website</h1>
+                <h1> <a href= "https://www.youtube.com/watch?v=dQw4w9WgXcQ">Kourtney's Cool Website</a></h1>
                 <ul id= "nav-ul"> 
                     <li class= "nav-li">
                     <a href= "indenx.html"> Home </a>
@@ -90,16 +93,16 @@
             <main>
                 <!-- Sidebar section -->
                 <div class= "sidebar">
-                    <img class= "sidebar-img" src= "data:image/jpeg;base64,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">
+                    <img class= "sidebar-img" src= "profilepic.jpg">
                 </div>
                     <!-- Content section -->
                     <div class= "content">
-                    <h2>Kourtney Walker</h2>
-                    <p>Student at NHS<p/>
+                    <h2 style="color:rgb(6, 17, 71)">Kourtney Walker</h2>
+                    <p style="color:rgb(6, 17, 71)">Student at NHS<p/>
                 <!-- Interests section -->
                     <div id= "interests">
-                    <h3>Interests</h3>
-                        <ul>
+                    <h3 style="color:rgb(6, 17, 71)">Interests</h3>
+                        <ul style="color:rgb(6, 17, 71)">
                             <li>Animation</li>
                             <li>Coding</li>
                             <li>2000s Teen Dramas</li>
