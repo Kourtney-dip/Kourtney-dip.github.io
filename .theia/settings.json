@@ -1,4 +1,4 @@
 {
-    "editor.autoSave": "off",
+    "editor.autoSave": "on",
     "liveServer.settings.port": 5501
 }
