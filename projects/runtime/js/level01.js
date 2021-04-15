@@ -102,8 +102,8 @@ createWall(3400, groundY + 5);
 
 
 
-var enemy = game.createGameItem('enemy',25);
-var greenSquare = draw.rect(50,50,'aguagreen');
+var enemy = game.createGameItem('enemy', 25);
+var greenSquare = draw.rect(50,50, 'ForestGreen');
 greenSquare.x = -25;
 greenSquare.y = -25;
 enemy.addChild(greenSquare);
