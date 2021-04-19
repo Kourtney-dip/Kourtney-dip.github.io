@@ -48,22 +48,25 @@ var background = function (window) {
 
             // TODO: 3 - Add a moon and starfield
             
-                var moon = draw.bitmap('img/moon.png');
-                moon.x = 20;
-                moon.y = 5;
-                moon.scaleX = .5;
-                moon.scaleY = .5;
-                background.addChild(moon);
-
-
-            
-            var circle;
+              var circle;
             for (var i = 0; i < 150; i++) {
             circle = draw.circle( 3, 'white', 'LightGray', 2);
             circle.x = canvasWidth*Math.random();
             circle.y = groundY*Math.random();
             background.addChild(circle);
             }
+            
+            
+                var moon = draw.bitmap('img/moon.png');
+                moon.x = 20;
+                moon.y = 5;
+                moon.scaleX = .25;
+                moon.scaleY = .25;
+                background.addChild(moon);
+
+
+            
+            
             
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?

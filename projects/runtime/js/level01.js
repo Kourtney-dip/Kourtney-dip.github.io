@@ -30,6 +30,10 @@ var level01 = function (window) {
        
         //loop the saws and the hallewall, make more halles
            
+
+    
+
+
         
 function drawBlades(x, y) {  //saw blades
         var hitZoneSize = 25;
@@ -68,25 +72,25 @@ function createWall(x, y) {  //wall
 
 
 
-drawBlades(1800, groundY - 40); //set 1 (do not change)
-drawBlades(1780, groundY - 89); //y can be no larger than 400 but no smaller than 50
-drawBlades(894, groundY - 428);
+drawBlades(1790, groundY - 40); //set 1 (do not change)
+drawBlades(1750, groundY - 89); //y can be no larger than 400 but no smaller than 50
+drawBlades(954, groundY - 428);
 
 drawBlades(2960, groundY - 65); //SET2
-drawBlades(666, groundY - 89);
-drawBlades(1880, groundY - 18);
+drawBlades(646, groundY - 99);
+drawBlades(2080, groundY - 18);
 
 drawBlades(850, groundY - 50); //SET3
 drawBlades(1590, groundY - 89);
-drawBlades(750, groundY - 520); 
+drawBlades(750, groundY + 30); 
 
-drawBlades(1999, groundY - 46); //SET4
+drawBlades(1999, groundY - 86); //SET4
 drawBlades(1443, groundY - 89);
-drawBlades(880, groundY - 190);
+drawBlades(1880, groundY - 190);
 
 drawBlades(1300, groundY - 50); //SET5
 drawBlades(1690, groundY - 89);
-drawBlades(750, groundY - 128); 
+drawBlades(750, groundY - 130); 
 
 
 drawBlades.x = drawBlades - 1;
@@ -100,18 +104,27 @@ createWall(1360, groundY + 5);
 createWall(3400, groundY + 5);
 
 
-
-
+//squares
 var enemy = game.createGameItem('enemy', 25);
 var greenSquare = draw.rect(50,50, 'ForestGreen');
+enemy.rotationVelocity = 10;
 greenSquare.x = -25;
 greenSquare.y = -25;
 enemy.addChild(greenSquare);
 
-enemy.x = 200;
+enemy.x = 1400;
 enemy.y = groundY-50;
+enemy.velocityX = -2.25;
 
 game.addGameItem(enemy); 
+
+
+
+
+        enemy.onPlayerCollision = function() {
+    console.log('The enemy has hit Halle');
+};
+
         // DO NOT EDIT CODE BELOW HERE
     }
 };
