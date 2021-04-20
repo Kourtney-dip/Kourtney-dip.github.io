@@ -78,7 +78,7 @@ drawBlades(954, groundY - 428);
 
 drawBlades(2960, groundY - 65); //SET2
 drawBlades(646, groundY - 99);
-drawBlades(2080, groundY - 18);
+drawBlades(2480, groundY - 18);
 
 drawBlades(850, groundY - 50); //SET3
 drawBlades(1590, groundY - 89);
@@ -104,7 +104,14 @@ createWall(1360, groundY + 5);
 createWall(3400, groundY + 5);
 
 
-//squares
+
+
+
+
+
+function createEnemy(x,y) {
+    // all code from TODO 11 and 12
+    //squares
 var enemy = game.createGameItem('enemy', 25);
 var greenSquare = draw.rect(50,50, 'ForestGreen');
 enemy.rotationVelocity = 10;
@@ -112,14 +119,15 @@ greenSquare.x = -25;
 greenSquare.y = -25;
 enemy.addChild(greenSquare);
 
-enemy.x = 1400;
-enemy.y = groundY-50;
+enemy.x = x;
+enemy.y = groundY - y ;
 enemy.velocityX = -2.25;
 
 game.addGameItem(enemy); 
-
-
-
+}
+createEnemy(1400,groundY-100);
+createEnemy(1850,groundY-5000);
+createEnemy(1900,groundY-5000);
 
         enemy.onPlayerCollision = function() {
     console.log('The enemy has hit Halle');
