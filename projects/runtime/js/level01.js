@@ -18,9 +18,30 @@ var level01 = function (window) {
             "gameItems": [
                 { "type": "sawblade", "x": 400, "y": groundY },
                 { "type": "sawblade", "x": 600, "y": groundY },
-                { "type": "sawblade", "x": 900, "y": groundY },
+                { "type": "sawblade", "x": 900, "y": groundY },                             
+                { "type": "obstacle", "x": 300, "y": groundY +5},                                
+                { "type": "obstacle", "x": 1860, "y": groundY +5},                                
+                { "type": "obstacle", "x": 2360, "y": groundY +5},
+                { "type": "obstacle", "x": 3400, "y": groundY +5},
+                { "type": "obstacle", "x": 3679, "y": groundY +5},
+                { "type": "obstacle", "x": 5500, "y": groundY +5},                
+                { "type": "enemy", "x": 800, "y": groundY},
+
             ]
         };
+
+        for (var i = 0; i < levelData.gameItems.length; i++){
+            var obj = levelData.gameItems[i];
+            if (obj.type === "sawblade"){
+                drawBlade(obj.x, obj.y);
+            } if (obj.type === "obstacle"){
+                 createWall(obj.x, obj.y);
+            } else {
+               createEnemy(obj.x, obj.y);
+            }
+        }
+
+
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
         game.setDebugMode(true);
@@ -35,103 +56,98 @@ var level01 = function (window) {
 
 
         
-function drawBlades(x, y) {  //saw blades
-        var hitZoneSize = 25;
-        var damageFromObstacle = 10;
-        var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+        function drawBlade(x, y) {  //saw blades
+                var hitZoneSize = 25;
+                var damageFromObstacle = 10;
+                var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
 
-    sawBladeHitZone.x = x;
-    sawBladeHitZone.y = y;
+                sawBladeHitZone.x = x;
+                sawBladeHitZone.y = y;
 
-    game.addGameItem(sawBladeHitZone);  
+                game.addGameItem(sawBladeHitZone);  
 
-    var obstacleImage = draw.bitmap('img/sawblade.png', -25, -25);
-    sawBladeHitZone.addChild(obstacleImage);
-    obstacleImage.x = -25;
-    obstacleImage.y = -25;
-}  
+                var obstacleImage = draw.bitmap('img/sawblade.png', -25, -25);
+                sawBladeHitZone.addChild(obstacleImage);
+                obstacleImage.x = -25;
+                obstacleImage.y = -25;
 
-function createWall(x, y) {  //wall
-    var hitZoneSize = 25;
-    var damageFromObstacle = 25;
-    var wallHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+                /* obstacleImage.x = obstacleImage.x - 1;
+                        if (obstacleImage.x < -200) {
+                            obstacleImage.x = canvasWidth; 
+                        } */
+            }  
 
-    wallHitZone.x = x + 125;
-    wallHitZone.y = y;
+        function createWall(x, y) {  //wall
+            var hitZoneSize = 25;
+            var damageFromObstacle = 25;
+            var wallHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
 
-    game.addGameItem(wallHitZone);
+            wallHitZone.x = x + 125;
+            wallHitZone.y = y;
 
-    var obstacleImage = draw.bitmap('img/op-spark-logo.png');
+            game.addGameItem(wallHitZone);
 
-    wallHitZone.addChild(obstacleImage);
-    obstacleImage.x = -44;
-    obstacleImage.y = -35;
-    obstacleImage.scaleX = 0.25;
-    obstacleImage.scaleY = 0.25;
-}
+            var obstacleImage = draw.bitmap('img/op-spark-logo.png');
+
+            wallHitZone.addChild(obstacleImage);
+            obstacleImage.x = -44;
+            obstacleImage.y = -35;
+            obstacleImage.scaleX = 0.25;
+            obstacleImage.scaleY = 0.25;
+        }
+
+       /* drawBlades(1790, groundY - 40); //set 1 (do not change)
+        drawBlades(1750, groundY - 89); //y can be no larger than 400 but no smaller than 50
+        drawBlades(954, groundY - 400);
+
+        drawBlades(2960, groundY - 65); //SET2
+        drawBlades(646, groundY - 99);
+        drawBlades(2580, groundY - 18);
+
+        drawBlades(850, groundY - 50); //SET3
+        drawBlades(2040, groundY - 99);
+        drawBlades(986, groundY + 30); 
+
+        drawBlades(2999, groundY - 86); //SET4
+        drawBlades(3475, groundY - 9);
+        drawBlades(2899, groundY - 190);
+
+        drawBlades(4789, groundY - 50); //SET5
+        drawBlades(1678, groundY - 99);
+        drawBlades(1905, groundY - 130); */
 
 
+                
 
-drawBlades(1790, groundY - 40); //set 1 (do not change)
-drawBlades(1750, groundY - 89); //y can be no larger than 400 but no smaller than 50
-drawBlades(954, groundY - 428);
-
-drawBlades(2960, groundY - 65); //SET2
-drawBlades(646, groundY - 99);
-drawBlades(2480, groundY - 18);
-
-drawBlades(850, groundY - 50); //SET3
-drawBlades(1590, groundY - 89);
-drawBlades(750, groundY + 30); 
-
-drawBlades(1999, groundY - 86); //SET4
-drawBlades(1443, groundY - 89);
-drawBlades(1880, groundY - 190);
-
-drawBlades(1300, groundY - 50); //SET5
-drawBlades(1690, groundY - 89);
-drawBlades(750, groundY - 130); 
-
-
-drawBlades.x = drawBlades - 1;
-    if(drawBlades.x < -200) {
-        drawBlades.x = canvasWidth;
-    }
-
-createWall(300, groundY + 5);
-createWall(1760, groundY + 5);
-createWall(1360, groundY + 5);
-createWall(3400, groundY + 5);
+       
 
 
 
 
+        function createEnemy(x,y) {
+                // all code from TODO 11 and 12
+                //squares
+            var enemy = game.createGameItem('enemy', 25);
+            var greenSquare = draw.rect(50,50, 'ForestGreen');
+            enemy.rotationVelocity = 10;
+            greenSquare.x = -25;
+            greenSquare.y = -25;
+            enemy.addChild(greenSquare);
 
+            enemy.x = x;
+            enemy.y = groundY - y ;
+            enemy.velocityX = -2.25;
 
+            game.addGameItem(enemy); 
 
-function createEnemy(x,y) {
-    // all code from TODO 11 and 12
-    //squares
-var enemy = game.createGameItem('enemy', 25);
-var greenSquare = draw.rect(50,50, 'ForestGreen');
-enemy.rotationVelocity = 10;
-greenSquare.x = -25;
-greenSquare.y = -25;
-enemy.addChild(greenSquare);
+            enemy.onPlayerCollision = function() {
+                console.log('The enemy has hit Halle');
+            }
+        }
+        createEnemy(1400,groundY-100);
+        createEnemy(1850,groundY-5000);
+        createEnemy(1900,groundY-5000);
 
-enemy.x = x;
-enemy.y = groundY - y ;
-enemy.velocityX = -2.25;
-
-game.addGameItem(enemy); 
-}
-createEnemy(1400,groundY-100);
-createEnemy(1850,groundY-5000);
-createEnemy(1900,groundY-5000);
-
-        enemy.onPlayerCollision = function() {
-    console.log('The enemy has hit Halle');
-};
 
         // DO NOT EDIT CODE BELOW HERE
     }
