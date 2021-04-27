@@ -45,6 +45,14 @@
         <!--Load Additional Scripts Here-->
 
     </head>
+
+
+
+
+
+
+
+    
     <body>
         <div id="main">
             <canvas id="canvas" width="500" height="500"></canvas>
@@ -55,7 +63,29 @@
                 background(window);
                 level01(window);
                 init(window);
-            })();
+            })(); 
+             </script>
+          </body>   
+              
+       var myAudio = document.getElementById("audio"); 
+
+    function playAudio() { 
+          myAudio.play(); 
+          //console.log(audio.play())
+           if (myAudio.paused && myAudio.currentTime >= 0 && !myAudio.started) {
+         myAudio.play();
+         console.log("started");
+     } //else {
+         //myAudio.pause();
+     //}
+}           
+        </script>
+        <audio controls autoplay loop hidden id="audio">
+    <source src="Flower Garden - Yoshi's Island (320 kbps).mp3" type="audio/mpeg">
+</audio>
+    </body>
+   </script> 
+
         </script>
     </body>
 </html>
