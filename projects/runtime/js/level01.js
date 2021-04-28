@@ -16,9 +16,9 @@ var level01 = function (window) {
             "number": 1, 
             "speed": -3,
             "gameItems": [
-                { "type": "sawblade", "x": 400, "y": groundY },
-                { "type": "sawblade", "x": 600, "y": groundY },
-                { "type": "sawblade", "x": 900, "y": groundY },                             
+                { "type": "sawblade", "x": 400, "y": groundY- 160 },
+                { "type": "sawblade", "x": 600, "y": groundY - 180 },
+                { "type": "sawblade", "x": 900, "y": groundY - 140 },                             
                 { "type": "obstacle", "x": 300, "y": groundY +5},                                
                 { "type": "obstacle", "x": 1860, "y": groundY +5},                                
                 { "type": "obstacle", "x": 2360, "y": groundY +5},
@@ -26,7 +26,6 @@ var level01 = function (window) {
                 { "type": "obstacle", "x": 3679, "y": groundY +5},
                 { "type": "obstacle", "x": 5500, "y": groundY +5},                
                 { "type": "enemy", "x": 800, "y": groundY},
-
             ]
         };
 
@@ -135,7 +134,7 @@ var level01 = function (window) {
             enemy.addChild(greenSquare);
 
             enemy.x = x;
-            enemy.y = groundY - y ;
+            enemy.y = y ;
             enemy.velocityX = -2.25;
 
             game.addGameItem(enemy); 
@@ -145,8 +144,11 @@ var level01 = function (window) {
             }
         }
         createEnemy(1400,groundY-100);
-        createEnemy(1850,groundY-5000);
-        createEnemy(1900,groundY-5000);
+        createEnemy(1850,groundY-150);
+        createEnemy(1900,groundY-340);
+        createEnemy(2790,groundY-250);
+        createEnemy(3407,groundY-100);
+        createEnemy(100,groundY-275);
 
 
         // DO NOT EDIT CODE BELOW HERE
