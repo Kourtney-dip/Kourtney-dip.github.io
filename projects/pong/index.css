@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color:  #a4a4a4;
+  }
+  
+  #board {
+    width: 1000px;
+    height: 661.5px;
+    border: 2.5px solid darkblue;
+    background-color: #000000;
+    position: absolute;
+    margin: auto;
+    top: 175px;
+  }
+  /* PADDLES */
+  #paddleA {   
+    background-color: #71197f;
+    border-radius: 3pt;
+    width: 15px;
+    height: 160px;
+    position: absolute;
+     left: 101.5px; 
+    top: 175px;  
+  }
+  #paddleB {
+    background-color: #ffffff;
+    border-radius: 3pt;
+    width: 15px;
+    height: 160px;
+    position: absolute;
+     left: 550px; 
+   top: 175px; 
+  }
+  #ball {
+    background-color: #810081;
+    border-radius: 10pt;
+    width: 20px;
+    height: 20px;
+    position: relative;
+     left: 330.75px; 
+   top: 330.75px;  
+  }
+ /* SCORE */
+  #scoreA {
+    color: gold;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 250px;
+    top: 555px;
+    font-family: "Press Start 2P";
+    font-size: 30px;
+  }
+
+   #scoreB {
+     color: gold;
+     width: 20px;
+     height: 20px;
+     position: absolute;
+     left: 750px;
+     top: 555px;
+     font-family: "Press Start 2P";
+     font-size: 30px;
+   }
+   #winner1 {
+    font-family: "Press Start 2P";
+    color: gold;
+    font-size: 32px;
+    position: absolute;
+    left: 270px;
+    top: 125px;
+   }
+
+   #winner2 {
+     font-family: "Press Start 2P";
+     color: gold;
+     font-size: 32px;
+    position: absolute;
+    left: 270px;
+    top: 125px;
+   }
+
+   #button {
+     width: 300px;
+     height: 60px;
+     border-radius: 10pt;
+     background-color: floralwhite;
+     color: #191970;
+     position: relative;
+     font-family: "Press Start 2P";
+     left: 350px;
+     top: 250px;
+   }
